@@ -1,0 +1,48 @@
+{% extends "layouts/base_add_products.html" %}
+
+{% block content %}
+
+    <div class="add-product-container">
+
+        <h2 class="title" >Add New Product</h2>
+
+        <form method="POST" action="{{ url_for('products.add_product') }}">
+    
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+    
+            <div class="floating-label">
+                {{ form.name_product(placeholder=" ") }}
+                <label for="name">Name Product</label>
+            </div>
+
+            <div class="floating-label">
+                {{ form.price(placeholder=" ") }}
+                <label for="email">Price</label>
+            </div>
+
+            <div class="floating-label">
+                {{ form.description(placeholder=" ") }}
+                <label for="password">Description</label>
+            </div>
+    
+            <div class="floating-label">
+                {{ form.category(placeholder=" ") }}
+                <label for="confirm_password">Category</label>
+            </div>
+
+            <button type="submit" class="btn-style">Add Product</button>
+
+        </form>
+
+        <a class="centered-link" href="{{ url_for('products.view_products') }}">View Products</a>
+    
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+    
+{% endblock %}

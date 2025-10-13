@@ -1,0 +1,137 @@
+/* DISEÑO CORRESPONDIENTE A LA PRIMERA RUTA */
+body {
+    background: 
+        url("../img/Screenshot_37.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.body-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.title {
+    color: skyblue;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-left: 45px;
+    text-align: left;
+}
+
+/* DISEÑO CORRESPONDIENTE A LA RUTA 'ADMIN' */
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin-top: -105px;
+    position: relative;
+}
+
+.link-admin {
+    text-decoration: none;
+    font-size: 45px;
+    color: skyblue;
+    margin: 0 32px;
+    display: flex;
+    align-items: center;
+}
+
+.link-admin:hover {
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    transition: all 0.3s;
+}
+
+.success-message {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 24px auto;
+    padding: 18px 25px;
+    text-align: center;
+    background: #eaf6ff;
+    color: #1e3c72;
+    font-size: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(30,60,114,0.08);
+    margin-top: 35px;
+    flex-direction: column;
+}
+
+/* Section-1 */
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(34, 34, 34, 0.35);
+    border-radius: 18px;
+    padding: 20px 30px;
+    margin: 40px auto;
+    position: relative;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+}
+
+/* Pseudo-elemento diagonal para separar texto y imagen */
+section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 80px;
+    height: 100%;
+    background: inherit;
+    border-radius: 0 18px 18px 0;
+    z-index: 3;
+    transform: skew(-20deg);
+    pointer-events: none;
+}
+
+/* Texto dentro de la sección */
+section h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.info {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.4;
+    max-width: 500px;
+    margin-bottom: 12px;
+    display: block; /* O simplemente elimina display por completo */
+}
+
+section > div {
+    min-width: 300px;
+    max-width: 320px; /* limite para contenedor imagen */
+    border-radius: 0 18px 18px 0;
+    overflow: hidden;
+    box-shadow: 0 0 18px #000;
+    position: relative;
+    z-index: 1;
+}
+
+section > div img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.landing {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,63 @@
+{% extends "layouts/base_edit_post.html" %}
+
+{% block content %}
+
+    <div class="edit-post-container">
+
+        <h2 class="title">Edit Post</h2>
+
+        <form method="POST" action="{{ url_for('posts.edit_post', post_id=post.id) }}">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+        
+                <div class="floating-label">
+                    {{ form.name_post(placeholder=" ") }}
+                    <label for="name_post">Name Post</label>
+                </div>
+
+                <div class="floating-label">
+                    {{ form.post(placeholder=" ") }}
+                    <label for="post">Post</label>
+                </div>
+
+                <div class="floating-label">
+                    {{ form.category(placeholder=" ") }}
+                    <label for="date">Category</label>
+                </div>
+                
+                <div class="floating-label">
+                    {{ form.date(placeholder=" ") }}
+                    <label for="date">Date</label>
+                </div>
+
+                <button type="submit" class="btn-style">Save Changes</button>
+
+        </form>
+
+        <p>
+            <a class="centered-link" href="{{ url_for('posts.view_post') }}">View Posts</a>
+        </p>
+    
+    </div>
+
+    {% if form.errors %}
+        <ul>
+            {% for field, errors in form.errors.items() %}
+                {% for error in errors %}
+                    <p style="color: red; text-align: center;">{{ field }} - {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <p class="success-message">{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

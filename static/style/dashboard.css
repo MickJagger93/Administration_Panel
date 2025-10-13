@@ -1,0 +1,100 @@
+.dashboard-body {
+    background: url("../img/Screenshot_37.png") no-repeat center center fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    color: skyblue;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    margin-top: 70px;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    text-shadow: 0 0 8px white, 0 0 1px white, 0 0 1px white;
+}
+
+.description {
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.btn-style {
+    background: none;
+    color: skyblue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.btn-style:hover {
+    background: whitesmoke;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    font-size: 2em;
+    padding: 150px 150px;
+    border-radius: 18px;
+    margin: 30px 40px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.dashboard-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.products-btn {
+    background: url("../img/Screenshot_24.png");
+}
+
+.blog-btn {
+    background: url("../img/Screenshot_25.png");
+}

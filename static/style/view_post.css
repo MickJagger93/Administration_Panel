@@ -1,0 +1,184 @@
+.view-post-body {
+    background: url("../img/Screenshot_37.png") no-repeat center center fixed;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    color: skyblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    text-shadow: 0 0 8px white, 0 0 1px white, 0 0 1px white;
+}
+
+.link {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: skyblue
+}
+
+.link:hover {
+    background: whitesmoke;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+.blogger-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background: transparent;
+    padding: 30px 0 10px 0;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tabla de posts */
+.post-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    background: white;
+    color: skyblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.post-table th, .post-table td {
+    border: 1px solid #444;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.post-table th {
+    background: blue;
+    font-size: 20px;
+}
+
+.post-table tr:nth-child(even) {
+    background: white;
+}
+
+.post-table tr:hover {
+    background: white;
+}
+
+.post-table .link,
+.post-table .delete-btn {
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 0 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.post-table .delete-btn {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.post-table .delete-btn:hover {
+    background: #e74c3c;
+}
+
+.back-dashboard-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.success-message {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 24px auto;
+    padding: 18px 25px;
+    text-align: center;
+    background: #eaf6ff;
+    color: #1e3c72;
+    font-size: 1.2em;
+    border-radius: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 2px 12px rgba(30,60,114,0.08);
+}
+
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.pagination-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination-container button {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border: 1px solid #007BFF;
+    background-color: white;
+    color: #007BFF;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-container button:disabled {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+.pagination-container button:hover:not(:disabled) {
+    background-color: #007BFF;
+    color: white;
+}

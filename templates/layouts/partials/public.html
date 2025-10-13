@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+    <h2 class="title">Administration Panel</h2>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="link-admin"href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a class="link-admin"href="{{ url_for('auth.register') }}">Register</a></li>
+        </ul>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success-message"> {{ message }} </p>
+        {% endfor %}
+    {% endif %}
+    
+
+{% endblock %}

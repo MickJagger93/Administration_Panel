@@ -1,0 +1,61 @@
+{% extends "layouts/base_view_products.html" %}
+
+{% block content %}
+
+    <div class="admin-header">
+        <h2 class="title">View and add products</h2>
+        <a href="{{ url_for('products.add_product') }}" class="link">Add Product</a>
+    </div>
+
+    <div class="search-container">
+        <label for="searchInput"></label>
+        <input type="text" id="searchInput" placeholder="Search by name or category...">
+    </div>
+
+        <table class="product-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name_product }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <a class="link" href="{{ url_for('products.edit_products', product_id=product.id) }}">Edit</a>
+                    <form method="POST" action="{{ url_for('products.delete_product', product_id=product.id) }}" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+        <div id="pagination" class="pagination-container"></div>
+        
+        <div class="back-dashboard-container">
+            <a href="{{ url_for('dashboard.dashboard') }}" class="link">Back To Dashboard</a>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message"> {{ message }} </p>
+            {% endfor %}
+            
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='js/view_product.js') }}"></script>
+
+{% endblock %}

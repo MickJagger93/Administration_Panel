@@ -1,0 +1,48 @@
+{% extends "layouts/base_add_post.html" %}
+
+{% block content %}
+
+    <div class="add-post-container">
+
+        <h2 class="title" >Add New Post</h2>
+    
+        <form method="POST" action="{{ url_for('posts.add_post') }}">
+    
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+    
+            <div class="floating-label">
+                {{ form.name_post(placeholder=" ") }}
+                <label for="name">Name Post</label>
+            </div>
+
+            <div class="floating-label">
+                {{ form.post(placeholder=" ") }}
+                <label for="email">Post</label>
+            </div>
+
+            <div class="floating-label">
+                {{ form.date(placeholder=" ") }}
+                <label for="password">Date</label>
+            </div>
+
+            <div class="floating-label">
+                {{ form.category(placeholder=" ") }}
+                <label for="category">Category</label>
+            </div>
+    
+            <button type="submit" class="btn-style">Add Post</button>
+
+        <a class="centered-link" href="{{ url_for('posts.view_post') }}">View Posts</a>
+
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="success-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+    
+{% endblock %}

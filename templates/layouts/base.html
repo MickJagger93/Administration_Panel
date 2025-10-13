@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/public.css')}}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/Screenshot_45.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>{% block title %}Administration Panel{% endblock %}</title>
+</head>
+
+<body class="body-container">
+
+    {% block content %} {% endblock %}
+    
+    <main>
+        
+        <section>
+            
+            <div class="landing">
+
+                <h3 class="section-1-subtitle">Administration App</h3>
+            
+                    <p class="info">
+                        In this project you can manage your posts and product inventory.
+                    </p>
+
+            </div>
+            
+            <div class="section-1-img">
+                <img src="{{ url_for('static', filename='img/Screenshot_51.png') }}" alt="Login-App">
+            </div>
+        </section>
+        
+        <section>
+            
+            <div class="landing">
+            
+                <h3 class="section-2-subtitle">Upload your products</h3>
+                
+                    <p class="info">-Upload products and make an inventory.</p>
+              
+                    <p class="info">-Put the price, name and category.</p>
+               
+                    <p class="info">-You can also edit the information and delete products</p>
+            
+            </div>
+            
+            <div>
+                <img src="{{ url_for('static', filename='img/Screenshot_53.png') }}" alt="Login">
+            </div>
+        </section>
+    
+        <section>
+            
+            <div class="landing">
+
+                <h3 class="section-3-subtitle">Upload your posts</h3>
+            
+                    <p class="info">-Create a post and save it in an administrative table.</p>
+                
+                    <p class="info">-You can also edit your post.</p>
+            
+            </div>
+            
+            <div>
+                <img src="{{ url_for('static', filename='img/Screenshot_52.png') }}" alt="Register">
+            </div>
+        
+        </section>
+    
+    </main>
+
+</body>
+</html>

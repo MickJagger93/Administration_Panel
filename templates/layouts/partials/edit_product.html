@@ -1,0 +1,56 @@
+{% extends "layouts/base_edit_product.html" %}
+
+{% block content %}
+
+    <div class="edit-product-container">
+
+        <h2 class="title">Edit Product</h2>
+
+            <form method="POST" action="{{ url_for('products.edit_products', product_id=product.id) }}">
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+        
+                    <div class="floating-label">
+                        {{ form.name_product(placeholder=" ") }}
+                        <label for="email">Name Product</label>
+                    </div>
+
+                    <div class="floating-label">
+                        {{ form.price(placeholder=" ") }}
+                        <label for="password">Price</label>
+                    </div>
+
+                    <div class="floating-label">
+                        {{ form.description(placeholder=" ") }}
+                        <label for="email">Description</label>
+                    </div>
+
+                    <button type="submit" class="btn-style">Save Changes</button>
+
+            </form>
+
+            <p>
+                <a class="centered-link" href="{{ url_for('products.view_products') }}">View Products</a>
+            </p>
+
+            {% if form.errors %}
+                <ul>
+                    {% for field, errors in form.errors.items() %}
+                        {% for error in errors %}
+                            <p class="error-message">{{ field }} - {{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="success-message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+    </div>
+
+{% endblock %}
