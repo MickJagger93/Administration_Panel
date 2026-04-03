@@ -1,2 +1,5 @@
 env/
 __pycache__/
+instance/
+migrations/
+development.db
